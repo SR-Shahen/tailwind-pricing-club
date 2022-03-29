@@ -11,14 +11,16 @@ const Navbar = () => {
         { id: 4, name: "Contact Us", link: "./contact us", },
     ]
     return (
-        <nav>
+        <nav className='bg-indigo-300'>
             <div onClick={() => setOpen(!open)} className='w-8 h-8 md:hidden'>
                 {open ? <XIcon></XIcon> : <MenuIcon></MenuIcon>}
             </div>
 
-            <ul className={`md:flex justify-center absolute duration-500 ease-in ${open ? 'top-6' : 'top-[-120px]'}`}>
+            <ul className={`md:flex justify-center bg-indigo-300 w-full  absolute duration-500 ease-in md:static ${open ? 'top-6' : 'top-[-120px]'}`}>
                 {
-                    routes.map(route => <Nav route={route}></Nav>)
+                    routes.map(route => <Nav
+                        key={route.id}
+                        route={route}></Nav>)
                 }
             </ul>
 
@@ -26,9 +28,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar; <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <a href=""></a></ul>
+export default Navbar; 
